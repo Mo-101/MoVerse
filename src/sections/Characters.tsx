@@ -21,7 +21,7 @@ const guardians: Guardian[] = [
       'The Sentinel watches your gates. She monitors suspicious activity, wallet connections, and logins. Her armor gleams with the wisdom of ages, standing firm against all threats.',
     image: '/images/sentinel-guardian.png',
     icon: <Shield className="w-6 h-6" />,
-    color: 'from-purple-600 to-purple-400',
+    color: 'from-yellow-600 to-yellow-400',
   },
   {
     id: 'healer',
@@ -96,7 +96,7 @@ const Characters = () => {
       className="section-padding bg-gradient-mystic relative overflow-hidden"
     >
       {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-mostar-purple-600/10 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-mostar-yellow-600/10 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="container-custom relative z-10">
         {/* Section Header */}
@@ -109,7 +109,7 @@ const Characters = () => {
             <div className="ornate-divider-center w-24">
               <div className="ornate-diamond" />
             </div>
-            <span className="font-cinzel text-sm tracking-[0.3em] text-mostar-purple-400 uppercase">
+            <span className="font-cinzel text-sm tracking-[0.3em] text-mostar-yellow-400 uppercase">
               The Guardians
             </span>
             <div className="ornate-divider-center w-24">
@@ -126,7 +126,7 @@ const Characters = () => {
           {/* View All Link */}
           <Link 
             to="/guardians"
-            className="inline-flex items-center gap-2 mt-6 text-mostar-purple-400 hover:text-mostar-purple-300 transition-colors"
+            className="inline-flex items-center gap-2 mt-6 text-mostar-yellow-400 hover:text-mostar-yellow-300 transition-colors"
           >
             <span className="font-cinzel text-sm tracking-wider">View All Guardians</span>
             <ChevronRight className="w-4 h-4" />
@@ -157,7 +157,7 @@ const Characters = () => {
               </div>
 
               {/* Decorative elements */}
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-mostar-purple-500/50 to-transparent" />
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-mostar-yellow-500/50 to-transparent" />
             </div>
           </div>
 
@@ -168,7 +168,7 @@ const Characters = () => {
             }`}
           >
             <div className="mb-8">
-              <span className="font-cinzel text-sm tracking-wider text-mostar-purple-400 uppercase mb-2 block">
+              <span className="font-cinzel text-sm tracking-wider text-mostar-yellow-400 uppercase mb-2 block">
                 {currentGuardian.title}
               </span>
               <h3 className="font-cinzel-decorative text-4xl md:text-5xl font-bold text-white mb-4">
@@ -201,7 +201,7 @@ const Characters = () => {
                     onClick={() => setActiveGuardian(index)}
                     className={`flex items-center gap-3 px-4 py-3 rounded-sm border transition-all duration-300 ${
                       activeGuardian === index
-                        ? `bg-gradient-to-r ${guardian.color} border-transparent text-white shadow-glow-purple`
+                        ? `bg-gradient-to-r ${guardian.color} border-transparent text-white shadow-glow-yellow`
                         : 'bg-white/5 border-white/10 text-white/60 hover:bg-white/10 hover:border-white/20'
                     }`}
                   >
@@ -228,7 +228,7 @@ const Characters = () => {
               to={`/guardian/${guardian.id}`}
               className={`group relative p-6 rounded-sm border transition-all duration-300 text-left card-hover ${
                 activeGuardian === index
-                  ? 'bg-white/10 border-mostar-purple-500/50'
+                  ? 'bg-white/10 border-mostar-yellow-500/50'
                   : 'bg-white/5 border-white/10 hover:bg-white/10'
               }`}
             >
@@ -244,7 +244,7 @@ const Characters = () => {
               
               {/* Active indicator */}
               {activeGuardian === index && (
-                <div className="absolute top-4 right-4 w-2 h-2 bg-mostar-purple-400 rounded-full animate-pulse" />
+                <div className="absolute top-4 right-4 w-2 h-2 bg-mostar-yellow-400 rounded-full animate-pulse" />
               )}
             </Link>
           ))}
@@ -255,3 +255,4 @@ const Characters = () => {
 };
 
 export default Characters;
+

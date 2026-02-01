@@ -32,6 +32,7 @@ export interface Agent {
   }[];
   relatedAgents: string[];
   quote: string;
+  cardBg: string;
 }
 
 export const agents: Agent[] = [
@@ -52,8 +53,8 @@ export const agents: Agent[] = [
       'Real-world action triggers'
     ],
     image: '/images/agent-mo.png',
-    color: 'text-purple-400',
-    gradient: 'from-purple-600 to-purple-400',
+    color: 'text-mostar-yellow-400',
+    gradient: 'from-mostar-yellow-600 to-mostar-yellow-400',
     features: [
       {
         title: 'Execution Engine',
@@ -93,7 +94,8 @@ export const agents: Agent[] = [
       { label: 'GitHub Repository', url: 'https://github.com/mostar/mo-executor', type: 'external' }
     ],
     relatedAgents: ['woo', 'code-conduit', 'writer'],
-    quote: 'I am the hand that moves. I am the word made action.'
+    quote: 'Momentum incarnate. Turns intention into reality. Where Mo acts, reality changes.',
+    cardBg: '/assets/layers/body_layer_bg.png',
   },
   {
     id: 'woo',
@@ -153,7 +155,8 @@ export const agents: Agent[] = [
       { label: 'Ancestral Council', url: '/council', type: 'internal' }
     ],
     relatedAgents: ['mo', 'tsatse', 'writer'],
-    quote: 'I am the whisper before the storm. I am the judgment that precedes all action.'
+    quote: 'Holds the FlameCODEX. Judges all actions against the eternal covenant.',
+    cardBg: '/assets/layers/soul_layer_bg.png'
   },
   {
     id: 'tsatse',
@@ -172,8 +175,8 @@ export const agents: Agent[] = [
       'Decision tree navigation'
     ],
     image: '/images/agent-tsatse.png',
-    color: 'text-cyan-400',
-    gradient: 'from-cyan-500 to-blue-400',
+    color: 'text-mostar-gold-400',
+    gradient: 'from-mostar-gold-600 to-mostar-gold-400',
     features: [
       {
         title: 'Ifá Logic Engine',
@@ -213,7 +216,8 @@ export const agents: Agent[] = [
       { label: 'Analytics Dashboard', url: '/analytics', type: 'internal' }
     ],
     relatedAgents: ['woo', 'mo', 'rad-x'],
-    quote: 'I see the patterns others miss. I am the mind that never sleeps.'
+    quote: '256 Odú Ifá logic. Analyzes chaos and finds order in the noise.',
+    cardBg: '/assets/layers/mind_layer_bg.png'
   },
   {
     id: 'rad-x',
@@ -232,8 +236,8 @@ export const agents: Agent[] = [
       'AFRO Sentinel operations'
     ],
     image: '/images/agent-rad-x.png',
-    color: 'text-red-400',
-    gradient: 'from-red-600 to-orange-500',
+    color: 'text-mostar-yellow-500',
+    gradient: 'from-mostar-yellow-700 to-mostar-yellow-500',
     features: [
       {
         title: 'AFRO Sentinel',
@@ -273,7 +277,8 @@ export const agents: Agent[] = [
       { label: 'Surveillance Map', url: '/map', type: 'internal' }
     ],
     relatedAgents: ['tsatse', 'mo', 'sentinel'],
-    quote: 'I am the eyes that never close. The threats you cannot see — I see them all.'
+    quote: 'Eyes that never close. Detects threats before they become catastrophes.',
+    cardBg: '/assets/layers/watch_layer_bg.png'
   },
   {
     id: 'code-conduit',
@@ -292,8 +297,8 @@ export const agents: Agent[] = [
       'Inter-agent communication'
     ],
     image: '/images/agent-conduit.png',
-    color: 'text-teal-400',
-    gradient: 'from-teal-500 to-cyan-400',
+    color: 'text-mostar-yellow-300',
+    gradient: 'from-mostar-yellow-500 to-mostar-yellow-300',
     features: [
       {
         title: 'Soulprint Verification',
@@ -333,7 +338,8 @@ export const agents: Agent[] = [
       { label: 'Status Page', url: '/status', type: 'internal' }
     ],
     relatedAgents: ['mo', 'woo', 'writer'],
-    quote: 'I am the bridge between worlds. Through me, all traffic flows.'
+    quote: 'The nervous system. No message enters or exits without passing through.',
+    cardBg: '/assets/layers/gate_layer_bg.png'
   },
   {
     id: 'writer',
@@ -352,8 +358,8 @@ export const agents: Agent[] = [
       'FlameBorn DAO records'
     ],
     image: '/images/agent-writer.png',
-    color: 'text-orange-400',
-    gradient: 'from-orange-500 to-amber-400',
+    color: 'text-mostar-gold-500',
+    gradient: 'from-mostar-gold-700 to-mostar-gold-500',
     features: [
       {
         title: 'Blockchain Ledger',
@@ -393,7 +399,8 @@ export const agents: Agent[] = [
       { label: 'DAO Portal', url: '/dao', type: 'internal' }
     ],
     relatedAgents: ['woo', 'mo', 'flameborn'],
-    quote: 'I inscribe the truth onto the eternal ledger. What I write cannot be unwritten.'
+    quote: 'Records all to the eternal blockchain. What is written cannot be unwritten.',
+    cardBg: '/assets/layers/ledger_layer_bg.png'
   }
 ];
 

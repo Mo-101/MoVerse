@@ -20,7 +20,7 @@ const pillars: Pillar[] = [
       'Tech is not built to mine attention or data. Every system is framed as a guardian of something: health, memory, balance, time.',
     principle: 'What does this protect? Who does it shield?',
     icon: <Shield className="w-8 h-8" />,
-    color: 'from-purple-600 to-purple-400',
+    color: 'from-yellow-600 to-yellow-400',
   },
   {
     id: 'balance',
@@ -83,25 +83,24 @@ const Doctrine = () => {
       className="section-padding bg-mostar-dark-900 relative overflow-hidden"
     >
       {/* Background elements */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-mostar-purple-500/30 to-transparent" />
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-mostar-purple-500/30 to-transparent" />
-      
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-mostar-yellow-500/30 to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-mostar-yellow-500/30 to-transparent" />
+
       {/* Decorative orbs */}
-      <div className="absolute top-20 right-20 w-64 h-64 bg-mostar-purple-600/5 rounded-full blur-[80px]" />
+      <div className="absolute top-20 right-20 w-64 h-64 bg-mostar-yellow-600/5 rounded-full blur-[80px]" />
       <div className="absolute bottom-20 left-20 w-48 h-48 bg-mostar-gold-400/5 rounded-full blur-[60px]" />
 
       <div className="container-custom relative z-10">
         {/* Section Header */}
         <div
-          className={`text-center mb-16 transition-all duration-1000 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
+          className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
         >
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="ornate-divider-center w-24">
               <div className="ornate-diamond" />
             </div>
-            <span className="font-cinzel text-sm tracking-[0.3em] text-mostar-purple-400 uppercase">
+            <span className="font-cinzel text-sm tracking-[0.3em] text-mostar-yellow-400 uppercase">
               Our Foundation
             </span>
             <div className="ornate-divider-center w-24">
@@ -118,83 +117,83 @@ const Doctrine = () => {
 
         {/* Pillars Grid */}
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-          {pillars.map((pillar, index) => (
-            <div
-              key={pillar.id}
-              className={`group relative transition-all duration-700 ${
-                isVisible
+          {pillars.map((pillar, index) => {
+            const delayClass = `pillar-delay-${Math.min(index, 3)}`;
+
+            return (
+              <div
+                key={pillar.id}
+                className={`group relative transition-all duration-700 ${delayClass} ${isVisible
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-10'
-              }`}
-              style={{ transitionDelay: `${index * 150}ms` }}
-              onMouseEnter={() => setActivePillar(pillar.id)}
-              onMouseLeave={() => setActivePillar(null)}
-            >
-              <div
-                className={`relative p-8 rounded-sm border transition-all duration-500 h-full ${
-                  activePillar === pillar.id
-                    ? 'bg-white/10 border-mostar-purple-500/50 shadow-glow-purple'
-                    : 'bg-white/5 border-white/10 hover:bg-white/8 hover:border-white/20'
-                }`}
+                  }`}
+                onMouseEnter={() => setActivePillar(pillar.id)}
+                onMouseLeave={() => setActivePillar(null)}
               >
-                {/* Icon */}
                 <div
-                  className={`w-16 h-16 rounded-full bg-gradient-to-br ${pillar.color} flex items-center justify-center mb-6 transition-transform duration-500 group-hover:scale-110 shadow-lg`}
+                  className={`relative p-8 rounded-sm border border-t-2 border-t-mostar-yellow-500/40 transition-all duration-500 h-full ${activePillar === pillar.id
+                    ? 'bg-white/10 border-mostar-yellow-500/60 shadow-glow-yellow'
+                    : 'bg-white/5 border-white/10 hover:bg-white/8 hover:border-white/20'
+                    }`}
                 >
-                  <div className="text-white">{pillar.icon}</div>
-                </div>
+                  {/* Icon */}
+                  <div
+                    className={`w-16 h-16 rounded-full bg-gradient-to-br ${pillar.color} flex items-center justify-center mb-6 transition-transform duration-500 group-hover:scale-110 shadow-lg`}
+                  >
+                    <div className="text-white">{pillar.icon}</div>
+                  </div>
 
-                {/* Content */}
-                <span className="font-cinzel text-xs tracking-wider text-white/40 uppercase mb-2 block">
-                  {pillar.subtitle}
-                </span>
-                <h3 className="font-cinzel text-2xl font-bold text-white mb-4 group-hover:text-mostar-purple-300 transition-colors">
-                  {pillar.title}
-                </h3>
-                <p className="text-white/60 leading-relaxed mb-6">
-                  {pillar.description}
-                </p>
-
-                {/* Principle Quote */}
-                <div className="relative pl-4 border-l-2 border-mostar-purple-500/30">
-                  <p className="text-sm text-mostar-purple-300 italic">
-                    "{pillar.principle}"
+                  {/* Content */}
+                  <span className="font-cinzel text-xs tracking-wider text-white/40 uppercase mb-2 block">
+                    {pillar.subtitle}
+                  </span>
+                  <h3 className="font-cinzel text-2xl font-bold text-white mb-4 group-hover:text-mostar-yellow-300 transition-colors">
+                    {pillar.title}
+                  </h3>
+                  <p className="text-white/60 leading-relaxed mb-6">
+                    {pillar.description}
                   </p>
-                </div>
 
-                {/* Decorative corner */}
-                <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-mostar-purple-500/20 rounded-tr-sm" />
-                <div className="absolute bottom-0 left-0 w-8 h-8 border-b border-l border-mostar-purple-500/20 rounded-bl-sm" />
+                  {/* Principle Quote */}
+                  <div className="relative pl-4 border-l-2 border-mostar-yellow-500/30">
+                    <p className="text-sm text-mostar-yellow-300 italic">
+                      "{pillar.principle}"
+                    </p>
+                  </div>
+
+                  {/* Decorative corner */}
+                  <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-mostar-yellow-500/20 rounded-tr-sm" />
+                  <div className="absolute bottom-0 left-0 w-8 h-8 border-b border-l border-mostar-yellow-500/20 rounded-bl-sm" />
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Brand Spine Quote */}
         <div
-          className={`mt-20 text-center transition-all duration-1000 delay-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
+          className={`mt-20 text-center transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
         >
           <div className="max-w-4xl mx-auto relative">
             {/* Quote marks */}
-            <div className="absolute -top-8 left-0 text-8xl font-cinzel-decorative text-mostar-purple-500/20">
+            <div className="absolute -top-8 left-0 text-8xl font-cinzel-decorative text-mostar-yellow-500/20">
               "
             </div>
-            <div className="absolute -bottom-16 right-0 text-8xl font-cinzel-decorative text-mostar-purple-500/20">
+            <div className="absolute -bottom-16 right-0 text-8xl font-cinzel-decorative text-mostar-yellow-500/20">
               "
             </div>
 
             <blockquote className="relative z-10 py-8">
               <p className="font-cinzel text-xl md:text-2xl text-white/90 leading-relaxed mb-6">
-                Mostar Industries is a myth-tech civilization that builds intelligent guardians for human life. 
+                Mostar Industries is a myth-tech civilization that builds intelligent guardians for human life.
                 We turn ancient African wisdom into AI systems that protect health, preserve knowledge, and keep people in balance.
               </p>
               <div className="flex items-center justify-center gap-4">
                 <div className="ornate-divider-center w-16">
                   <div className="ornate-diamond" />
                 </div>
-                <span className="font-cinzel text-sm text-mostar-purple-400 tracking-wider">
+                <span className="font-cinzel text-sm text-mostar-yellow-400 tracking-wider">
                   The Mostar Pledge
                 </span>
                 <div className="ornate-divider-center w-16">
@@ -210,3 +209,4 @@ const Doctrine = () => {
 };
 
 export default Doctrine;
+

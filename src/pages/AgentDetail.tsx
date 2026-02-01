@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { useParams, Link as RouterLink, useNavigate } from 'react-router-dom';
-import { 
-  ArrowLeft, 
-  ExternalLink, 
-  Zap, 
-  Network, 
-  Database, 
+import {
+  ArrowLeft,
+  ExternalLink,
+  Zap,
+  Network,
+  Database,
   Radio,
   BookOpen,
   Shield,
@@ -79,13 +79,23 @@ const AgentDetail = () => {
   return (
     <div className="min-h-screen bg-mostar-dark-900 text-white overflow-x-hidden">
       <Navigation scrollY={scrollY} />
-      
+
       {/* Hero Section */}
       <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Background */}
+        {/* Background Layer 1: Image */}
+        <div
+          className="absolute inset-0 z-0 opacity-20 bg-cover bg-center bg-no-repeat transition-transform duration-1000 scale-105"
+          style={{
+            backgroundImage: `url(${agent.cardBg})`,
+            transform: `translateY(${scrollY * 0.2}px)`
+          }}
+        />
+
+        {/* Background Layer 2: Theme Gradients */}
         <div className="absolute inset-0 z-0">
-          <div className={`absolute inset-0 bg-gradient-to-br ${agent.gradient} opacity-10`} />
-          <div className="absolute inset-0 bg-gradient-to-b from-mostar-dark-900/80 via-mostar-dark-900/50 to-mostar-dark-900" />
+          <div className={`absolute inset-0 bg-gradient-to-br ${agent.gradient} opacity-20`} />
+          <div className="absolute inset-0 bg-gradient-to-b from-mostar-dark-900/90 via-mostar-dark-900/40 to-mostar-dark-900" />
+          <div className="absolute inset-0 bg-black/40" />
         </div>
 
         {/* Animated particles */}
@@ -109,7 +119,7 @@ const AgentDetail = () => {
             {/* Left: Content */}
             <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
               {/* Back button */}
-              <button 
+              <button
                 onClick={() => navigate(-1)}
                 className="flex items-center gap-2 text-white/60 hover:text-white mb-8 transition-colors"
               >
@@ -136,7 +146,7 @@ const AgentDetail = () => {
               </p>
 
               {/* Quote */}
-              <blockquote className="relative pl-6 border-l-2 border-mostar-purple-500/50 mb-8">
+              <blockquote className="relative pl-6 border-l-2 border-mostar-yellow-500/50 mb-8">
                 <p className="text-xl text-white/80 italic">"{agent.quote}"</p>
               </blockquote>
 
@@ -152,7 +162,7 @@ const AgentDetail = () => {
                 </span>
                 <div className="flex flex-wrap gap-2">
                   {agent.soulprint.map((trait, i) => (
-                    <span 
+                    <span
                       key={i}
                       className="px-4 py-2 bg-white/5 border border-white/10 rounded-sm font-cinzel text-sm text-white/70"
                     >
@@ -176,7 +186,7 @@ const AgentDetail = () => {
               <div className="relative aspect-[3/4] max-w-md mx-auto">
                 {/* Glow effect */}
                 <div className={`absolute inset-0 bg-gradient-to-t ${agent.gradient} opacity-30 blur-[80px]`} />
-                
+
                 {/* Character image */}
                 <div className="relative character-pedestal">
                   <img
@@ -187,7 +197,7 @@ const AgentDetail = () => {
                 </div>
 
                 {/* Decorative elements */}
-                <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-mostar-purple-500/50 to-transparent" />
+                <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-mostar-yellow-500/50 to-transparent" />
               </div>
             </div>
           </div>
@@ -203,11 +213,11 @@ const AgentDetail = () => {
 
       {/* Features Section */}
       <section className="section-padding bg-gradient-mystic relative">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-mostar-purple-500/30 to-transparent" />
-        
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-mostar-yellow-500/30 to-transparent" />
+
         <div className="container-custom">
           <div className="text-center mb-16">
-            <span className="font-cinzel text-sm tracking-[0.3em] text-mostar-purple-400 uppercase block mb-4">
+            <span className="font-cinzel text-sm tracking-[0.3em] text-mostar-yellow-400 uppercase block mb-4">
               Capabilities
             </span>
             <h2 className="font-cinzel-decorative text-4xl md:text-5xl font-bold text-white">
@@ -220,9 +230,9 @@ const AgentDetail = () => {
             {agent.features.map((feature, i) => {
               const IconComponent = iconMap[feature.icon] || Activity;
               return (
-                <div 
+                <div
                   key={i}
-                  className="group p-6 bg-white/5 border border-white/10 rounded-sm hover:bg-white/10 hover:border-mostar-purple-500/30 transition-all duration-300"
+                  className="group p-6 bg-white/5 border border-white/10 rounded-sm hover:bg-white/10 hover:border-mostar-yellow-500/30 transition-all duration-300"
                 >
                   <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${agent.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
                     <IconComponent className="w-6 h-6 text-white" />
@@ -243,7 +253,7 @@ const AgentDetail = () => {
             </h3>
             <div className="flex flex-wrap justify-center gap-3">
               {agent.domains.map((domain, i) => (
-                <span 
+                <span
                   key={i}
                   className={`px-6 py-3 bg-gradient-to-r ${agent.gradient} rounded-sm font-cinzel text-white`}
                 >
@@ -272,7 +282,7 @@ const AgentDetail = () => {
                       <span className={`font-cinzel ${agent.color}`}>{ability.level}%</span>
                     </div>
                     <div className="h-2 bg-white/10 rounded-full overflow-hidden">
-                      <div 
+                      <div
                         className={`h-full bg-gradient-to-r ${agent.gradient} transition-all duration-1000`}
                         style={{ width: `${ability.level}%`, transitionDelay: `${i * 200}ms` }}
                       />
@@ -290,7 +300,7 @@ const AgentDetail = () => {
               </h3>
               <div className="grid grid-cols-3 gap-6">
                 {agent.stats.map((stat, i) => (
-                  <div 
+                  <div
                     key={i}
                     className="text-center p-6 bg-white/5 border border-white/10 rounded-sm"
                   >
@@ -319,7 +329,7 @@ const AgentDetail = () => {
                 href={link.url}
                 target={link.type === 'external' ? '_blank' : undefined}
                 rel={link.type === 'external' ? 'noopener noreferrer' : undefined}
-                className="flex items-center gap-2 px-6 py-3 bg-white/5 border border-white/20 rounded-sm hover:bg-mostar-purple-500/20 hover:border-mostar-purple-500/50 transition-all duration-300"
+                className="flex items-center gap-2 px-6 py-3 bg-white/5 border border-white/20 rounded-sm hover:bg-mostar-yellow-500/20 hover:border-mostar-yellow-500/50 transition-all duration-300"
               >
                 <span className="font-cinzel text-white">{link.label}</span>
                 {link.type === 'external' && <ExternalLink className="w-4 h-4 text-white/60" />}
@@ -341,7 +351,7 @@ const AgentDetail = () => {
                 <RouterLink
                   key={related.id}
                   to={`/agent/${related.id}`}
-                  className="group p-6 bg-white/5 border border-white/10 rounded-sm hover:bg-white/10 hover:border-mostar-purple-500/30 transition-all duration-300"
+                  className="group p-6 bg-white/5 border border-white/10 rounded-sm hover:bg-white/10 hover:border-mostar-yellow-500/30 transition-all duration-300"
                 >
                   <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${related.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
                     <Activity className="w-6 h-6 text-white" />
@@ -363,7 +373,7 @@ const AgentDetail = () => {
         <div className="container-custom">
           <div className="flex justify-between items-center">
             {prevAgent ? (
-              <RouterLink 
+              <RouterLink
                 to={`/agent/${prevAgent.id}`}
                 className="flex items-center gap-2 text-white/60 hover:text-white transition-colors"
               >
@@ -374,9 +384,9 @@ const AgentDetail = () => {
                 </div>
               </RouterLink>
             ) : <div />}
-            
+
             {nextAgent && (
-              <RouterLink 
+              <RouterLink
                 to={`/agent/${nextAgent.id}`}
                 className="flex items-center gap-2 text-white/60 hover:text-white transition-colors"
               >
@@ -397,3 +407,4 @@ const AgentDetail = () => {
 };
 
 export default AgentDetail;
+

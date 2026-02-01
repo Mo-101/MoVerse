@@ -40,18 +40,18 @@ module.exports = {
         },
         // Custom colors for Mostar Industries
         mostar: {
-          purple: {
-            50: '#f5f3ff',
-            100: '#ede9fe',
-            200: '#ddd6fe',
-            300: '#c4b5fd',
-            400: '#a78bfa',
-            500: '#8b5cf6',
-            600: '#7c3aed',
-            700: '#6d28d9',
-            800: '#5b21b6',
-            900: '#4c1d95',
-            950: '#2e1065',
+          yellow: {
+            50: '#fffbeb',
+            100: '#fef3c7',
+            200: '#fde68a',
+            300: '#fcd34d',
+            400: '#fbbf24',
+            500: '#f59e0b',
+            600: '#d97706',
+            700: '#b45309',
+            800: '#92400e',
+            900: '#78350f',
+            950: '#451a03',
           },
           gold: {
             400: '#fbbf24',
@@ -59,9 +59,9 @@ module.exports = {
             600: '#d97706',
           },
           dark: {
-            900: '#0f0a1a',
-            800: '#1a1025',
-            700: '#251a35',
+            900: '#000000',
+            800: '#0a0a0a',
+            700: '#171717',
           }
         }
       },
@@ -79,9 +79,9 @@ module.exports = {
       },
       boxShadow: {
         xs: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
-        'glow-purple': '0 0 40px rgba(139, 92, 246, 0.3)',
+        'glow-yellow': '0 0 40px rgba(251, 191, 36, 0.3)',
         'glow-gold': '0 0 40px rgba(251, 191, 36, 0.3)',
-        'glow-purple-lg': '0 0 60px rgba(139, 92, 246, 0.4)',
+        'glow-yellow-lg': '0 0 60px rgba(251, 191, 36, 0.4)',
       },
       keyframes: {
         "accordion-down": {

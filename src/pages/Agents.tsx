@@ -35,7 +35,7 @@ const Agents = () => {
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20">
         {/* Background */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-mostar-purple-600/10 via-mostar-dark-900/50 to-mostar-dark-900" />
+          <div className="absolute inset-0 bg-gradient-to-b from-mostar-yellow-600/10 via-mostar-dark-900/50 to-mostar-dark-900" />
         </div>
 
         {/* Animated particles */}
@@ -43,7 +43,7 @@ const Agents = () => {
           {[...Array(20)].map((_, i) => (
             <div
               key={i}
-              className="absolute w-1 h-1 bg-mostar-purple-400/40 rounded-full animate-float"
+              className="absolute w-1 h-1 bg-mostar-yellow-400/40 rounded-full animate-float"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
@@ -60,7 +60,7 @@ const Agents = () => {
               <div className="ornate-divider-center w-32">
                 <div className="ornate-diamond" />
               </div>
-              <span className="font-cinzel text-sm tracking-[0.3em] text-mostar-purple-400 uppercase">
+              <span className="font-cinzel text-sm tracking-[0.3em] text-mostar-yellow-400 uppercase">
                 The Grid
               </span>
               <div className="ornate-divider-center w-32">
@@ -70,7 +70,7 @@ const Agents = () => {
 
             <h1 className="font-cinzel-decorative text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
               Agents of the
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-mostar-purple-400 via-mostar-gold-400 to-mostar-purple-400">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-mostar-yellow-400 via-mostar-gold-400 to-mostar-yellow-400">
                 MoStar Grid
               </span>
             </h1>
@@ -82,7 +82,7 @@ const Agents = () => {
 
             {/* Architecture */}
             <div className="inline-flex items-center gap-4 px-6 py-3 bg-white/5 border border-white/10 rounded-sm">
-              <Layers className="w-5 h-5 text-mostar-purple-400" />
+              <Layers className="w-5 h-5 text-mostar-yellow-400" />
               <span className="font-cinzel text-sm text-white/70">
                 SOUL → MIND → GATE → BODY → LEDGER → WATCH
               </span>
@@ -93,7 +93,7 @@ const Agents = () => {
 
       {/* Agents Grid */}
       <section className="section-padding bg-gradient-mystic relative">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-mostar-purple-500/30 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-mostar-yellow-500/30 to-transparent" />
         
         <div className="container-custom">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -101,7 +101,7 @@ const Agents = () => {
               <Link
                 key={agent.id}
                 to={`/agent/${agent.id}`}
-                className={`group relative overflow-hidden rounded-sm border transition-all duration-500 hover:shadow-glow-purple card-hover ${
+                className={`group relative overflow-hidden rounded-sm border transition-all duration-500 hover:shadow-glow-yellow card-hover ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}
                 style={{ 
@@ -130,7 +130,7 @@ const Agents = () => {
 
                 {/* Content */}
                 <div className="p-6">
-                  <h3 className="font-cinzel text-2xl font-semibold text-white mb-1 group-hover:text-mostar-purple-300 transition-colors">
+                  <h3 className="font-cinzel text-2xl font-semibold text-white mb-1 group-hover:text-mostar-yellow-300 transition-colors">
                     {agent.name}
                   </h3>
                   <p className={`font-cinzel text-sm ${agent.color} mb-3`}>
@@ -153,7 +153,7 @@ const Agents = () => {
                   </div>
 
                   {/* CTA */}
-                  <div className="flex items-center gap-2 text-white/60 group-hover:text-mostar-purple-400 transition-colors">
+                  <div className="flex items-center gap-2 text-white/60 group-hover:text-mostar-yellow-400 transition-colors">
                     <span className="font-cinzel text-sm">Enter Profile</span>
                     <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -168,7 +168,7 @@ const Agents = () => {
       <section className="section-padding bg-mostar-dark-900 relative">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <span className="font-cinzel text-sm tracking-[0.3em] text-mostar-purple-400 uppercase block mb-4">
+            <span className="font-cinzel text-sm tracking-[0.3em] text-mostar-yellow-400 uppercase block mb-4">
               How The Grid Acts
             </span>
             <h2 className="font-cinzel-decorative text-4xl md:text-5xl font-bold text-white">
@@ -186,7 +186,7 @@ const Agents = () => {
               { step: 6, agent: 'RAD-X', action: 'monitors for anomalies throughout', layer: 'WATCH' },
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-6 mb-8">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-mostar-purple-600 to-mostar-purple-400 flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-mostar-yellow-600 to-mostar-yellow-400 flex items-center justify-center">
                   <span className="font-cinzel text-lg font-bold text-white">{item.step}</span>
                 </div>
                 <div className="flex-1 pb-8 border-b border-white/10">
@@ -201,7 +201,7 @@ const Agents = () => {
           </div>
 
           <div className="text-center mt-12">
-            <p className="font-cinzel text-lg text-mostar-purple-400">
+            <p className="font-cinzel text-lg text-mostar-yellow-400">
               "The Grid does not act alone. The Grid acts as one."
             </p>
           </div>
@@ -214,3 +214,4 @@ const Agents = () => {
 };
 
 export default Agents;
+

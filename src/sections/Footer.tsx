@@ -35,10 +35,10 @@ const Footer = () => {
   return (
     <footer className="bg-mostar-dark-900 relative overflow-hidden">
       {/* Top border */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-mostar-purple-500/30 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-mostar-yellow-500/30 to-transparent" />
 
       {/* Background glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-mostar-purple-600/5 rounded-full blur-[100px]" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-mostar-yellow-600/5 rounded-full blur-[100px]" />
 
       <div className="container-custom relative z-10">
         {/* Main Footer Content */}
@@ -47,8 +47,8 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <a href="#" className="flex items-center gap-3 mb-6 group">
               <div className="relative">
-                <div className="w-12 h-12 border-2 border-mostar-purple-500 rounded-sm rotate-45 flex items-center justify-center group-hover:border-mostar-gold-400 transition-colors">
-                  <span className="font-cinzel-decorative text-xl text-mostar-purple-400 -rotate-45 group-hover:text-mostar-gold-400 transition-colors">
+                <div className="w-12 h-12 border-2 border-mostar-yellow-500 rounded-sm rotate-45 flex items-center justify-center group-hover:border-mostar-gold-400 transition-colors">
+                  <span className="font-cinzel-decorative text-xl text-mostar-yellow-400 -rotate-45 group-hover:text-mostar-gold-400 transition-colors">
                     M
                   </span>
                 </div>
@@ -73,7 +73,7 @@ const Footer = () => {
                 <a
                   key={social.label}
                   href={social.href}
-                  className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:bg-mostar-purple-500/20 hover:border-mostar-purple-500/50 hover:text-white transition-all duration-300"
+                  className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:bg-mostar-yellow-500/20 hover:border-mostar-yellow-500/50 hover:text-white transition-all duration-300"
                   aria-label={social.label}
                 >
                   {social.icon}
@@ -92,7 +92,7 @@ const Footer = () => {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-white/60 hover:text-mostar-purple-400 transition-colors text-sm flex items-center gap-2 group"
+                    className="text-white/60 hover:text-mostar-yellow-400 transition-colors text-sm flex items-center gap-2 group"
                   >
                     <Shield className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                     {link.label}
@@ -112,7 +112,7 @@ const Footer = () => {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-white/60 hover:text-mostar-purple-400 transition-colors text-sm flex items-center gap-2 group"
+                    className="text-white/60 hover:text-mostar-yellow-400 transition-colors text-sm flex items-center gap-2 group"
                   >
                     <Shield className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                     {link.label}
@@ -132,7 +132,7 @@ const Footer = () => {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-white/60 hover:text-mostar-purple-400 transition-colors text-sm flex items-center gap-2 group"
+                    className="text-white/60 hover:text-mostar-yellow-400 transition-colors text-sm flex items-center gap-2 group"
                   >
                     <Shield className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                     {link.label}
@@ -183,3 +183,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

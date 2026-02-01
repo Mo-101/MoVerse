@@ -31,13 +31,13 @@ const Navigation = ({ scrollY }: NavigationProps) => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <div className="relative">
-              <div className="w-10 h-10 border-2 border-mostar-purple-500 rounded-sm rotate-45 flex items-center justify-center group-hover:border-mostar-gold-400 transition-colors">
-                <span className="font-cinzel-decorative text-lg text-mostar-purple-400 -rotate-45 group-hover:text-mostar-gold-400 transition-colors">
+              <div className="w-10 h-10 border-2 border-mostar-yellow-500 rounded-sm rotate-45 flex items-center justify-center group-hover:border-mostar-gold-400 transition-colors">
+                <span className="font-cinzel-decorative text-lg text-mostar-yellow-400 -rotate-45 group-hover:text-mostar-gold-400 transition-colors">
                   M
                 </span>
               </div>
             </div>
-            <span className="font-cinzel text-xl font-semibold tracking-wider text-white group-hover:text-mostar-purple-300 transition-colors">
+            <span className="font-cinzel text-xl font-semibold tracking-wider text-white group-hover:text-mostar-yellow-300 transition-colors">
               Mostar
             </span>
           </Link>
@@ -51,7 +51,7 @@ const Navigation = ({ scrollY }: NavigationProps) => {
                 className="font-cinzel text-sm tracking-wider text-white/70 hover:text-white transition-colors relative group"
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-mostar-purple-500 group-hover:w-full transition-all duration-300" />
+                <span className="absolute -bottom-1 left-0 w-0 h-px bg-mostar-yellow-500 group-hover:w-full transition-all duration-300" />
               </Link>
             ))}
           </div>
@@ -100,3 +100,4 @@ const Navigation = ({ scrollY }: NavigationProps) => {
 };
 
 export default Navigation;
+

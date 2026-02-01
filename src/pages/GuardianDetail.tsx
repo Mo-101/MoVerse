@@ -108,7 +108,7 @@ const GuardianDetail = () => {
                 </div>
 
                 {/* Decorative elements */}
-                <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-mostar-purple-500/50 to-transparent" />
+                <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-mostar-yellow-500/50 to-transparent" />
               </div>
             </div>
 
@@ -142,7 +142,7 @@ const GuardianDetail = () => {
               </p>
 
               {/* Quote */}
-              <blockquote className="relative pl-6 border-l-2 border-mostar-purple-500/50 mb-8">
+              <blockquote className="relative pl-6 border-l-2 border-mostar-yellow-500/50 mb-8">
                 <p className="text-xl text-white/80 italic">"{guardian.quote}"</p>
               </blockquote>
 
@@ -180,11 +180,11 @@ const GuardianDetail = () => {
 
       {/* Products Section */}
       <section className="section-padding bg-gradient-mystic relative">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-mostar-purple-500/30 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-mostar-yellow-500/30 to-transparent" />
         
         <div className="container-custom">
           <div className="text-center mb-16">
-            <span className="font-cinzel text-sm tracking-[0.3em] text-mostar-purple-400 uppercase block mb-4">
+            <span className="font-cinzel text-sm tracking-[0.3em] text-mostar-yellow-400 uppercase block mb-4">
               Products & Features
             </span>
             <h2 className="font-cinzel-decorative text-4xl md:text-5xl font-bold text-white">
@@ -235,8 +235,8 @@ const GuardianDetail = () => {
 
           {/* User Benefit */}
           <div className="mt-12 max-w-3xl mx-auto text-center">
-            <div className="relative p-8 bg-gradient-to-r from-mostar-purple-600/20 to-mostar-purple-400/10 border border-mostar-purple-500/30 rounded-sm">
-              <span className="font-cinzel text-xs tracking-wider text-mostar-purple-400 uppercase block mb-4">
+            <div className="relative p-8 bg-gradient-to-r from-mostar-yellow-600/20 to-mostar-yellow-400/10 border border-mostar-yellow-500/30 rounded-sm">
+              <span className="font-cinzel text-xs tracking-wider text-mostar-yellow-400 uppercase block mb-4">
                 You Understand It As
               </span>
               <p className="text-xl text-white italic">"{guardian.userBenefit}"</p>
@@ -280,7 +280,7 @@ const GuardianDetail = () => {
                 href={link.url}
                 target={link.type === 'external' ? '_blank' : undefined}
                 rel={link.type === 'external' ? 'noopener noreferrer' : undefined}
-                className="flex items-center gap-2 px-6 py-3 bg-white/5 border border-white/20 rounded-sm hover:bg-mostar-purple-500/20 hover:border-mostar-purple-500/50 transition-all duration-300"
+                className="flex items-center gap-2 px-6 py-3 bg-white/5 border border-white/20 rounded-sm hover:bg-mostar-yellow-500/20 hover:border-mostar-yellow-500/50 transition-all duration-300"
               >
                 <span className="font-cinzel text-white">{link.label}</span>
                 {link.type === 'external' && <ExternalLink className="w-4 h-4 text-white/60" />}
@@ -304,7 +304,7 @@ const GuardianDetail = () => {
                   <RouterLink
                     key={related.id}
                     to={`/guardian/${related.id}`}
-                    className="group p-6 bg-white/5 border border-white/10 rounded-sm hover:bg-white/10 hover:border-mostar-purple-500/30 transition-all duration-300"
+                    className="group p-6 bg-white/5 border border-white/10 rounded-sm hover:bg-white/10 hover:border-mostar-yellow-500/30 transition-all duration-300"
                   >
                     <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${related.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
                       <RelatedIcon className="w-6 h-6 text-white" />
@@ -361,3 +361,4 @@ const GuardianDetail = () => {
 };
 
 export default GuardianDetail;
+

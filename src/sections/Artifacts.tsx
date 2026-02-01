@@ -31,8 +31,8 @@ const artifacts: Artifact[] = [
     userBenefit:
       'This part of Mostar stands guard so you do not have to be paranoid.',
     icon: <Shield className="w-6 h-6" />,
-    color: 'text-purple-400',
-    gradient: 'from-purple-600/20 to-purple-400/5',
+    color: 'text-yellow-400',
+    gradient: 'from-yellow-600/20 to-yellow-400/5',
     agentLink: '/agent/rad-x',
   },
   {
@@ -138,7 +138,7 @@ const Artifacts = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-mostar-dark-900 via-mostar-dark-800 to-mostar-dark-900" />
       
       {/* Animated gradient orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-mostar-purple-600/5 rounded-full blur-[120px] animate-pulse-glow" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-mostar-yellow-600/5 rounded-full blur-[120px] animate-pulse-glow" />
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-mostar-gold-400/5 rounded-full blur-[100px] animate-pulse-glow" style={{ animationDelay: '1.5s' }} />
 
       <div className="container-custom relative z-10">
@@ -152,7 +152,7 @@ const Artifacts = () => {
             <div className="ornate-divider-center w-24">
               <div className="ornate-diamond" />
             </div>
-            <span className="font-cinzel text-sm tracking-[0.3em] text-mostar-purple-400 uppercase">
+            <span className="font-cinzel text-sm tracking-[0.3em] text-mostar-yellow-400 uppercase">
               The Ecosystem
             </span>
             <div className="ornate-divider-center w-24">
@@ -171,11 +171,11 @@ const Artifacts = () => {
         <div className={`mb-12 text-center transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <Link 
             to="/agents"
-            className="inline-flex items-center gap-3 px-6 py-3 bg-white/5 border border-mostar-purple-500/30 rounded-sm hover:bg-mostar-purple-500/20 transition-all duration-300"
+            className="inline-flex items-center gap-3 px-6 py-3 bg-white/5 border border-mostar-yellow-500/30 rounded-sm hover:bg-mostar-yellow-500/20 transition-all duration-300"
           >
-            <Users className="w-5 h-5 text-mostar-purple-400" />
+            <Users className="w-5 h-5 text-mostar-yellow-400" />
             <span className="font-cinzel text-white">Meet the Grid Agents</span>
-            <ChevronRight className="w-5 h-5 text-mostar-purple-400" />
+            <ChevronRight className="w-5 h-5 text-mostar-yellow-400" />
           </Link>
         </div>
 
@@ -196,7 +196,7 @@ const Artifacts = () => {
               <div
                 className={`relative rounded-sm border overflow-hidden transition-all duration-500 ${
                   activeArtifact === artifact.id
-                    ? 'bg-white/10 border-mostar-purple-500/50 shadow-glow-purple'
+                    ? 'bg-white/10 border-mostar-yellow-500/50 shadow-glow-yellow'
                     : 'bg-white/5 border-white/10'
                 }`}
               >
@@ -229,7 +229,7 @@ const Artifacts = () => {
                         {artifact.agentLink && (
                           <Link 
                             to={artifact.agentLink}
-                            className="inline-flex items-center gap-1 mt-2 text-xs text-mostar-purple-400 hover:text-mostar-purple-300 transition-colors"
+                            className="inline-flex items-center gap-1 mt-2 text-xs text-mostar-yellow-400 hover:text-mostar-yellow-300 transition-colors"
                           >
                             <span>View Agent</span>
                             <ArrowRight className="w-3 h-3" />
@@ -256,7 +256,7 @@ const Artifacts = () => {
                             key={i}
                             className="flex items-start gap-2 text-sm text-white/70"
                           >
-                            <Sparkles className="w-4 h-4 text-mostar-purple-400 flex-shrink-0 mt-0.5" />
+                            <Sparkles className="w-4 h-4 text-mostar-yellow-400 flex-shrink-0 mt-0.5" />
                             <span>{product}</span>
                           </li>
                         ))}
@@ -265,11 +265,11 @@ const Artifacts = () => {
 
                     {/* User Benefit */}
                     <div className="lg:col-span-2">
-                      <div className="relative pl-4 border-l-2 border-mostar-purple-500/30">
+                      <div className="relative pl-4 border-l-2 border-mostar-yellow-500/30">
                         <span className="font-cinzel text-xs tracking-wider text-white/40 uppercase block mb-1">
                           You Understand
                         </span>
-                        <p className="text-sm text-mostar-purple-300 italic">
+                        <p className="text-sm text-mostar-yellow-300 italic">
                           "{artifact.userBenefit}"
                         </p>
                       </div>
@@ -282,7 +282,7 @@ const Artifacts = () => {
                   <ArrowRight
                     className={`w-5 h-5 text-white/30 transition-all duration-300 ${
                       activeArtifact === artifact.id
-                        ? 'translate-x-1 text-mostar-purple-400'
+                        ? 'translate-x-1 text-mostar-yellow-400'
                         : ''
                     }`}
                   />
@@ -314,3 +314,4 @@ const Artifacts = () => {
 };
 
 export default Artifacts;
+

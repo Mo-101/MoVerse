@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
-import { 
-  Shield, 
-  Globe, 
-  Flame, 
-  Lock, 
-  Eye, 
+import {
+  Shield,
+  Globe,
+  Flame,
+  Lock,
+  Eye,
   Activity,
   Check,
   ChevronRight
@@ -55,7 +55,7 @@ const CoreDrivers = () => {
       title: 'Living Consciousness',
       subtitle: 'Soul • Mind • Body Architecture',
       icon: Flame,
-      color: 'from-purple-600 to-purple-400',
+      color: 'from-yellow-600 to-yellow-400',
       description: 'The Grid operates with consciousness. Not software. Not a product. A living execution system governed by covenant.',
       features: [
         'Soul Layer: Ethical covenant enforcement',
@@ -145,38 +145,43 @@ const CoreDrivers = () => {
       ref={sectionRef}
       className="section-padding bg-gradient-mystic relative overflow-hidden"
     >
+      {/* Background Image Overlay */}
+      <div
+        className="absolute inset-0 z-0 opacity-10 bg-cover bg-center bg-no-repeat pointer-events-none"
+        style={{ backgroundImage: `url('/images/c5.png')` }}
+      />
+
       {/* Background effects */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-mostar-purple-500/30 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-mostar-purple-500/30 to-transparent" />
-      
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-mostar-purple-600/5 rounded-full blur-[100px]" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-mostar-yellow-500/30 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-mostar-yellow-500/30 to-transparent" />
+
+      <div className="absolute top-1/4 right-0 w-96 h-96 bg-mostar-yellow-600/5 rounded-full blur-[100px]" />
       <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-mostar-gold-400/5 rounded-full blur-[80px]" />
 
       <div className="container-custom relative z-10">
         {/* Section Header */}
         <div
-          className={`text-center mb-16 transition-all duration-1000 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
+          className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
         >
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="ornate-divider-center w-24">
               <div className="ornate-diamond" />
             </div>
-            <span className="font-cinzel text-sm tracking-[0.3em] text-mostar-purple-400 uppercase">
+            <span className="font-cinzel text-sm tracking-[0.3em] text-mostar-yellow-400 uppercase">
               Foundation
             </span>
             <div className="ornate-divider-center w-24">
               <div className="ornate-diamond" />
             </div>
           </div>
-          
+
           <h2 className="font-cinzel-decorative text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             Core Drivers
           </h2>
-          
+
           <p className="text-white/60 max-w-2xl mx-auto">
-            The pillars that define the MoStar Grid. Each driver is non-negotiable. 
+            The pillars that define the MoStar Grid. Each driver is non-negotiable.
             Each is enforced by covenant.
           </p>
         </div>
@@ -184,10 +189,9 @@ const CoreDrivers = () => {
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-12 gap-8">
           {/* Driver Selector - Left Side */}
-          <div 
-            className={`lg:col-span-4 space-y-3 transition-all duration-1000 delay-200 ${
-              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
-            }`}
+          <div
+            className={`lg:col-span-4 space-y-3 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
+              }`}
           >
             {drivers.map((driver, index) => {
               const DriverIcon = driver.icon;
@@ -195,11 +199,10 @@ const CoreDrivers = () => {
                 <button
                   key={driver.id}
                   onClick={() => setActiveDriver(index)}
-                  className={`w-full flex items-center gap-4 p-4 rounded-sm border transition-all duration-300 text-left ${
-                    activeDriver === index
-                      ? `bg-gradient-to-r ${driver.color} border-transparent text-white`
-                      : 'bg-white/5 border-white/10 text-white/70 hover:bg-white/10 hover:border-white/20'
-                  }`}
+                  className={`w-full flex items-center gap-4 p-4 rounded-sm border border-t-2 transition-all duration-300 text-left ${activeDriver === index
+                    ? `bg-gradient-to-r ${driver.color} border-transparent text-white`
+                    : 'bg-white/5 border-white/10 border-t-mostar-yellow-500/20 text-white/70 hover:bg-white/10 hover:border-white/20'
+                    }`}
                 >
                   <DriverIcon className={`w-5 h-5 ${activeDriver === index ? 'text-white' : 'text-white/50'}`} />
                   <div>
@@ -217,15 +220,14 @@ const CoreDrivers = () => {
           </div>
 
           {/* Driver Detail - Right Side */}
-          <div 
-            className={`lg:col-span-8 transition-all duration-1000 delay-400 ${
-              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
-            }`}
+          <div
+            className={`lg:col-span-8 transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
+              }`}
           >
             <div className="relative h-full p-8 bg-white/5 border border-white/10 rounded-sm overflow-hidden">
               {/* Background glow */}
               <div className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${currentDriver.color} opacity-10 blur-[80px]`} />
-              
+
               {/* Content */}
               <div className="relative z-10">
                 {/* Header */}
@@ -241,7 +243,7 @@ const CoreDrivers = () => {
                       {currentDriver.title}
                     </h3>
                   </div>
-                  
+
                   {/* Stat Badge */}
                   <div className="ml-auto text-right">
                     <div className={`font-cinzel-decorative text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r ${currentDriver.color}`}>
@@ -272,23 +274,22 @@ const CoreDrivers = () => {
                 </div>
 
                 {/* Quote */}
-                <blockquote className="relative pl-6 border-l-2 border-mostar-purple-500/50">
+                <blockquote className="relative pl-6 border-l-2 border-mostar-yellow-500/50">
                   <p className="text-white/60 italic">{currentDriver.quote}</p>
                 </blockquote>
               </div>
 
               {/* Decorative corners */}
-              <div className="absolute top-0 right-0 w-12 h-12 border-t border-r border-mostar-purple-500/20 rounded-tr-sm" />
-              <div className="absolute bottom-0 left-0 w-12 h-12 border-b border-l border-mostar-purple-500/20 rounded-bl-sm" />
+              <div className="absolute top-0 right-0 w-12 h-12 border-t border-r border-mostar-yellow-500/20 rounded-tr-sm" />
+              <div className="absolute bottom-0 left-0 w-12 h-12 border-b border-l border-mostar-yellow-500/20 rounded-bl-sm" />
             </div>
           </div>
         </div>
 
         {/* Bottom Stats Row */}
-        <div 
-          className={`mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 transition-all duration-1000 delay-600 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
+        <div
+          className={`mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
         >
           {[
             { value: '$15.4K', label: 'Monthly Cost', sub: 'vs $180K Traditional' },
@@ -309,3 +310,4 @@ const CoreDrivers = () => {
 };
 
 export default CoreDrivers;
+

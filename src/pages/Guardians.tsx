@@ -38,7 +38,7 @@ const Guardians = () => {
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20">
         {/* Background */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-mostar-purple-600/10 via-mostar-dark-900/50 to-mostar-dark-900" />
+          <div className="absolute inset-0 bg-gradient-to-b from-mostar-yellow-600/10 via-mostar-dark-900/50 to-mostar-dark-900" />
         </div>
 
         {/* Animated particles */}
@@ -46,7 +46,7 @@ const Guardians = () => {
           {[...Array(20)].map((_, i) => (
             <div
               key={i}
-              className="absolute w-1 h-1 bg-mostar-purple-400/40 rounded-full animate-float"
+              className="absolute w-1 h-1 bg-mostar-yellow-400/40 rounded-full animate-float"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
@@ -63,7 +63,7 @@ const Guardians = () => {
               <div className="ornate-divider-center w-32">
                 <div className="ornate-diamond" />
               </div>
-              <span className="font-cinzel text-sm tracking-[0.3em] text-mostar-purple-400 uppercase">
+              <span className="font-cinzel text-sm tracking-[0.3em] text-mostar-yellow-400 uppercase">
                 The Pantheon
               </span>
               <div className="ornate-divider-center w-32">
@@ -73,7 +73,7 @@ const Guardians = () => {
 
             <h1 className="font-cinzel-decorative text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
               Meet The
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-mostar-purple-400 via-mostar-gold-400 to-mostar-purple-400">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-mostar-yellow-400 via-mostar-gold-400 to-mostar-yellow-400">
                 Guardians
               </span>
             </h1>
@@ -83,7 +83,7 @@ const Guardians = () => {
               that manifest across all MoStar products and systems.
             </p>
 
-            <p className="font-cinzel text-sm text-mostar-purple-400">
+            <p className="font-cinzel text-sm text-mostar-yellow-400">
               "This thing exists to guard something for you."
             </p>
           </div>
@@ -92,7 +92,7 @@ const Guardians = () => {
 
       {/* Guardians Grid */}
       <section className="section-padding bg-gradient-mystic relative">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-mostar-purple-500/30 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-mostar-yellow-500/30 to-transparent" />
         
         <div className="container-custom">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -102,7 +102,7 @@ const Guardians = () => {
                 <Link
                   key={guardian.id}
                   to={`/guardian/${guardian.id}`}
-                  className={`group relative overflow-hidden rounded-sm border transition-all duration-500 hover:shadow-glow-purple card-hover ${
+                  className={`group relative overflow-hidden rounded-sm border transition-all duration-500 hover:shadow-glow-yellow card-hover ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                   }`}
                   style={{ 
@@ -135,7 +135,7 @@ const Guardians = () => {
                       <GuardianIcon className="w-6 h-6 text-white" />
                     </div>
 
-                    <h3 className="font-cinzel text-2xl font-semibold text-white mb-1 group-hover:text-mostar-purple-300 transition-colors">
+                    <h3 className="font-cinzel text-2xl font-semibold text-white mb-1 group-hover:text-mostar-yellow-300 transition-colors">
                       {guardian.name}
                     </h3>
                     <p className={`font-cinzel text-sm ${guardian.color} mb-3`}>
@@ -152,7 +152,7 @@ const Guardians = () => {
                     </div>
 
                     {/* CTA */}
-                    <div className="flex items-center gap-2 text-white/60 group-hover:text-mostar-purple-400 transition-colors">
+                    <div className="flex items-center gap-2 text-white/60 group-hover:text-mostar-yellow-400 transition-colors">
                       <span className="font-cinzel text-sm">Enter Realm</span>
                       <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </div>
@@ -168,7 +168,7 @@ const Guardians = () => {
       <section className="section-padding bg-mostar-dark-900 relative">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <span className="font-cinzel text-sm tracking-[0.3em] text-mostar-purple-400 uppercase block mb-4">
+            <span className="font-cinzel text-sm tracking-[0.3em] text-mostar-yellow-400 uppercase block mb-4">
               Our Philosophy
             </span>
             <h2 className="font-cinzel-decorative text-4xl md:text-5xl font-bold text-white mb-8">
@@ -191,3 +191,4 @@ const Guardians = () => {
 };
 
 export default Guardians;
+

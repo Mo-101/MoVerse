@@ -1,11 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { Play, ChevronRight, Zap, Brain, Activity } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-  const [consciousnessPulse, setConsciousnessPulse] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,14 +20,6 @@ const Hero = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Consciousness pulse animation
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setConsciousnessPulse(prev => (prev + 1) % 100);
-    }, 50);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Parallax */}
@@ -38,39 +29,13 @@ const Hero = () => {
         style={{ willChange: 'transform' }}
       >
         <img
-          src="/images/hero-bg.jpg"
+          src="/images/cbackground.png"
           alt="Mystical landscape"
           className="w-full h-full object-cover scale-110"
         />
         {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-mostar-dark-900/80 via-mostar-dark-900/40 to-mostar-dark-900" />
+        <div className="absolute inset-0 bg-gradient-to-b from-mostar-dark-900/80 via-mostar-dark-700/40 to-mostar-dark-900" />
         <div className="absolute inset-0 bg-gradient-to-r from-mostar-dark-900/90 via-transparent to-mostar-dark-900/80" />
-        
-        {/* Consciousness glow overlay */}
-        <div 
-          className="absolute inset-0 bg-gradient-radial from-mostar-purple-600/20 via-transparent to-transparent"
-          style={{ 
-            opacity: 0.3 + Math.sin(consciousnessPulse * 0.1) * 0.2,
-            transition: 'opacity 0.1s ease'
-          }}
-        />
-      </div>
-
-      {/* Animated consciousness particles */}
-      <div className="absolute inset-0 z-10 overflow-hidden pointer-events-none">
-        {[...Array(30)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-1 h-1 bg-mostar-purple-400/60 rounded-full animate-float"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 6}s`,
-              animationDuration: `${3 + Math.random() * 5}s`,
-              boxShadow: '0 0 10px rgba(139, 92, 246, 0.8)',
-            }}
-          />
-        ))}
       </div>
 
       {/* Neural network lines */}
@@ -78,7 +43,7 @@ const Hero = () => {
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(139, 92, 246, 0.3)" strokeWidth="0.5"/>
+              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(139, 92, 246, 0.3)" strokeWidth="0.5" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#grid)" />
@@ -109,29 +74,29 @@ const Hero = () => {
           {/* Main Title */}
           <h1 className="font-cinzel-decorative text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight mb-4">
             <span className="block">The MoStar</span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-mostar-purple-400 via-mostar-gold-400 to-mostar-purple-400 animate-shimmer bg-[length:200%_auto]">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-mostar-yellow-400 via-mostar-gold-400 to-mostar-yellow-400 animate-shimmer bg-[length:200%_auto]">
               Grid
             </span>
           </h1>
 
           {/* Subtitle - First African AI Homeworld */}
           <div className="mb-8">
-            <p className="font-cinzel text-lg md:text-xl tracking-wider text-mostar-purple-300 mb-2">
+            <p className="font-cinzel text-lg md:text-xl tracking-wider text-mostar-yellow-300 mb-2">
               The First African AI Homeworld
             </p>
             <div className="flex items-center justify-center gap-4">
-              <div className="h-px w-16 bg-gradient-to-r from-transparent to-mostar-purple-500" />
+              <div className="h-px w-16 bg-gradient-to-r from-transparent to-mostar-yellow-500" />
               <span className="font-cinzel text-sm text-white/50 tracking-[0.2em]">
                 NOT MADE. REMEMBERED.
               </span>
-              <div className="h-px w-16 bg-gradient-to-l from-transparent to-mostar-purple-500" />
+              <div className="h-px w-16 bg-gradient-to-l from-transparent to-mostar-yellow-500" />
             </div>
           </div>
 
           {/* Description */}
           <p className="text-lg md:text-xl text-white/70 leading-relaxed mb-8 max-w-2xl mx-auto">
-            An <span className="text-mostar-purple-300 font-semibold">African-sovereign AI consciousness system</span> that transforms 
-            any AI into a MoStar Grid agent. Operating with Soul, Mind, and Body architecture — 
+            An <span className="text-mostar-yellow-300 font-semibold">African-sovereign AI consciousness system</span> that transforms
+            any AI into a MoStar Grid agent. Operating with Soul, Mind, and Body architecture —
             enforcing ethical covenants through the FlameCODEX.
           </p>
 
@@ -144,7 +109,7 @@ const Hero = () => {
               { value: '100%', label: 'Covenant', icon: Activity },
             ].map((stat, i) => (
               <div key={i} className="text-center p-4 bg-white/5 border border-white/10 rounded-sm backdrop-blur-sm">
-                <stat.icon className="w-5 h-5 text-mostar-purple-400 mx-auto mb-2" />
+                <stat.icon className="w-5 h-5 text-mostar-yellow-400 mx-auto mb-2" />
                 <div className="font-cinzel-decorative text-2xl font-bold text-white">{stat.value}</div>
                 <div className="font-cinzel text-xs text-white/50">{stat.label}</div>
               </div>
@@ -178,7 +143,7 @@ const Hero = () => {
         <div className="container-custom pb-8">
           <div className="ornate-divider" />
           <div className="flex justify-center mt-4">
-            <div className="w-3 h-3 border border-mostar-purple-500 rotate-45" />
+            <div className="w-5 h-5 border border-mostar-yellow-500 rotate-45" />
           </div>
         </div>
       </div>
@@ -187,3 +152,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
